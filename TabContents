@@ -1,0 +1,39 @@
+※ 탭이 있는 박스에 사용하거나 pageCon과 중첩으로 사용 가능
+
+tabCon = new tabContents(탭 갯수, 해당 위치);
+tabCon.init();
+
+CSS 설정
+.contents:nth-child(1) .tabWrap .tab[data-num="0"]{
+    background: url(../images/06/item_1.png) no-repeat;
+}
+
+.contents:nth-child(1) .tabWrap .tab_btn[data-num="0"]{
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    height: 100px;
+    border: 1px solid red;
+}
+------------------------------------------
+
+ex)
+tabCon = new tabContents(4, _page);
+tabCon.init();
+
+pageConEvent_1(tabCon.tab.eq(0));
+tabCon.wrap.find(".tab_btn").bind('click',function(){
+    pageConEvent_1(tabCon.tab.eq(tabCon.currentTab));
+});
+
+
+function pageConEvent_1(_page){ // 공통으로 실행될 함수
+    switch(_page.index()){ //page마다 기능이 다를 경우 사용
+        case 0:
+        break;
+        case 1:
+        break;
+    }
+}
+
+
