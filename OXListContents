@@ -1,0 +1,16 @@
+※ OX 퀴즈가 여러개 사용 (확인문제)
+
+var oxAns = [정답];
+
+oxCon = new oxListContents(해당 위치, 해당 정답);
+oxCon.init();
+
+------------------------------------------
+
+ex)
+var oxAns = ['O', 'O', 'X'];
+
+oxCon = new oxListContents(_page, oxAns);
+oxCon.init();
+
+
