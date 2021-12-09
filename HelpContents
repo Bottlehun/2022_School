@@ -1,0 +1,18 @@
+※ 도움말 이미지 사용
+
+helpCon = new helpContents(해당 위치);
+helpCon.init();
+
+CSS 설정
+여백 없는 이미지로 만들어야 함.
+.contents:nth-child(1) .con{
+    height: 228px;
+    background: url(../images/06/help_1.png) center bottom no-repeat;
+}
+------------------------------------------
+
+ex)
+helpCon = new helpContents(_page);
+helpCon.init();
+
+
