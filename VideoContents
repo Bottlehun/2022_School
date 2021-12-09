@@ -1,0 +1,45 @@
+※ 음성 모드 class="videoFrame adomode" 클래스에 adomode 추가
+
+<link rel="stylesheet" type="text/css" href="../../common/videopage/css/video.css"/>
+
+<script src="../../common/videopage/js/video.js"></script>
+
+<div id="videoFrame" class="videoFrame"></div>
+
+
+CSS 설정
+.contents:nth-child(1) .videoFrame{
+    transform: translateX(-50%) scale(1); // 가로 가운데 정렬 및 축소(확대)
+}
+
+
+------------------------------------------
+
+추가기능 1
+동영상 탭이동 버튼(구간 반복) 삽입
+var mark1 = '00:00:00.000 00:00:01.000 00:00:02.000';
+var tab = ['24쪽','25쪽','26쪽','27쪽']// 탭 리스트
+var tabTime = mark1; //탭시간, 마커와 시간이 다를 경우 리스트 갯수와 동일한 시간값 작성
+videoCon.tabMaker(탭 텍스트, 탭 시간, true); 추가기능 1
+
+※ 참고기능(진행바 마킹기능)
+var mark1 = '00:00:00.000 00:00:01.000 00:00:02.000';
+videoCon.markMaker(mark1);
+
+
+ex)
+var fileName = 'dummy'; // 영상, 자막 파일명
+
+videoCon = new videoPlayer($('#videoFrame'));
+videoCon.src = 'inc/media/mp4/'+fileName+'.mp4';
+videoCon.init();
+videoCon.video.attr('poster','inc/media/mp4/'+fileName+'.png');
+
+videoCon.tabMaker(tab, tabTime, true); //추가기능 1
+
+
+※ 사이즈 큰것
+top: 180px;
+width: 1420px;
+height: 875px;
+
