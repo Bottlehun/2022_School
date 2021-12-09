@@ -1,0 +1,39 @@
+※ 별표클릭
+
+starCon = new starContents(해당 위치, 별표 줄 개수);
+starCon.init();
+
+CSS 설정
+.contents:nth-child(1) .starContent .star1{
+    position: absolute;
+    top: 300px;
+    left: 1000px;
+}
+
+.contents:nth-child(1) .starContent .star2{
+    position: absolute;
+    top: 600px;
+    left: 1000px;
+}
+
+------------------------------------------
+추가기능 1 : 말풍선
+
+CSS 설정
+.contents:nth-child(1) .starContent .star1 .item{
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    height: 150px;
+    background: url(../images/06/pop_1.png) no-repeat;
+}
+
+------------------------------------------
+
+ex)
+starCon = new starContents(_page, 4);
+starCon.init();
+starCon.setBalloon(); //추가기능 1 : 말풍선
+
+
+
