@@ -1,0 +1,48 @@
+※ 선긋기
+
+<script src="../../common/js/linequiz.js"></script> // 보통 선긋기 (정답 버튼이 있음)
+
+<script src="../../common/js/multiLinequiz.js"></script> // 멀티라인 선긋기 (한포인트에 여러선을 잇기)
+
+<script src="../../common/js/linequiz_ox.js"></script> // 선을 그으면 정오답이 바로 표시됨
+
+
+lineCon = new lineQuizContents(해당위치, 왼쪽 개수, 오른쪽 개수, 정답, {옵션});
+lineCon.init();
+
+옵션
+_page: _page 필수 삽입
+overlap: 한 점에 라인을 중복 가능 여부 (true : 중복 가능, false : 중복 불가능)
+
+
+CSS 설정
+.contents:nth-child(1) .quizSec .quizArea .leftLine .ansArea {
+    position: absolute;
+    top: 300px;
+    left: 300px;
+}
+.contents:nth-child(1) .quizSec .quizArea .leftLine .ansArea:nth-child(2) {왼쪽 포인터 위치}
+.contents:nth-child(1) .quizSec .quizArea .leftLine .ansArea:nth-child(3) {왼쪽 포인터 위치}
+
+.contents:nth-child(1) .quizSec .quizArea .rightLine .r_item {
+    position: absolute;
+    top: 300px;
+    left: 500px;
+}
+.contents:nth-child(1) .quizSec .quizArea .rightLine .r_item:nth-child(2) {오른쪽 포인터 위치}
+.contents:nth-child(1) .quizSec .quizArea .rightLine .r_item:nth-child(3) {오른쪽 포인터 위치}
+
+------------------------------------------
+
+ex)
+var quizItem = ["0_1", "1_2", "2_0"];
+
+lineCon = new lineQuizContents(_page, 3, 3, quizItem, {
+    _page: _page,
+    overlap: true,
+});
+lineCon.init();
+※ _page: _page 필수 삽입
+
+
+
