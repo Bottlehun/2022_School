@@ -1,0 +1,69 @@
+clickContents(갯수, 해당위치, 버튼모양); 버튼모양 1: 예시, 2: 물음표
+clickCon.init(); // 초기화
+clickCon.showitem(); // 요소 추가후 나타남
+
+*************************************************************************
+추가기능 1 : 클릭시 새로운 요소가 나타나고 사라짐(토글)
+CSS 설정
+.contents:nth-child(1) .clickContent .clickItem1{
+    top: 300px;
+    left: 100px;
+    width: 1000px;
+    height: 200px;
+/*    border: 1px solid red;*/
+}
+
+.contents:nth-child(1) .clickContent .showItem[data-num="0"] {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    height: 300px;
+    background: url(이미지 경로) no-repeat;
+}
+
+*************************************************************************
+추가기능 2 : 클릭버튼이 1개일 경우 정답보기 버튼 생성
+: "anschk_o" 값이 있을 경우 정답버튼 & 정답 사운드
+ex) 
+clickCon.setAnsBtn("anschk_o");
+
+*************************************************************************
+추가기능 3 : 초성
+var choTxt = ["마중물"];
+
+ex) 
+clickCon.cho(choTxt)
+
+*************************************************************************
+추가기능 4 : zIndex 설정
+clickCon.zIndex(해당 버튼 요소, clickItem 번호);
+클릭시 해당 요소의 zIndex를 상위로 올림
+※ 타겟 이름 지정은 항상 마지막 순서로
+
+*************************************************************************
+
+※ 클릭 버튼에 음성 추가하기
+clickCon.items.bind('click', function(){
+    if($(this).css('opacity') == 0){
+        switch($(this).index()){
+            case 0:
+                contentAdo("1-8-01");
+            break;
+            case 1:
+                contentAdo("1-8-02");
+            break;
+        }
+    }
+})
+
+------------------------------------------
+
+ex) 
+clickCon = new clickContents(4, _page, 2);
+clickCon.init();
+clickCon.showitem(); // 추가기능 1
+clickCon.setAnsBtn(); // 추가기능 2
+clickCon.cho(choTxt); // 추가기능 3
+clickCon.zIndex(_page.find('.target'), "1"); // 추가기능 4
+
