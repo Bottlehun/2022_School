@@ -1,0 +1,43 @@
+※ 드래그 / 드롭을 이미지 사용할 경우 dragItems 정답을 숫자로 사용하고 CSS설정해줌
+   (text-indent: -9999px -> 추가)
+
+<script src="../../common/js/jquery.ui.drag.js"></script>
+<script src="../../common/js/jquery.ui.touch-punch.min.js"></script>
+
+dragCon = new dragContents(해당 위치, 드래그앤드롭 정답, {옵션}); 
+
+옵션
+random: "1", //랜덤정답 "1": 정오답, "2": 정답 없는 랜덤정답, "3": 정답 있는 랜덤정답
+answer: function(_val){
+    if(_val){
+        //정답일 경우
+    }else{
+        //오답일 경우
+    }
+} //정답, 오답 콜백함수
+clickAnsbtn: function(_val){
+    if(_val){
+        //정답보기를 클릭한 경우
+    }else{
+        //다시하기를 클릭한 경우
+    }
+}; //정답버튼 클릭 콜백함수
+
+CSS 설정
+.contents:nth-child(1) .dragArea{드래그위치}
+.contents:nth-child(1) .dropArea{드롭위치}
+.contents:nth-child(1) .dragArea .dragItem{드래그 버튼 설정}
+.contents:nth-child(1) .dropArea .dropCode{드롭 버튼 설정}
+.contents:nth-child(1) .dropArea .dropCode.ans span{정답일경우 가로세로 가운데 정렬하기 위해 만듬(텍스트를 span으로 감쌈)}
+------------------------------------------
+
+ex)
+var dragItems = {
+    drop: ['정직'],
+    drag: ['정직', '모범', '사랑', '양심'],
+}
+
+dragCon = new dragContents(_page, dragItems, {옵션});
+dragCon.init();
+
+
