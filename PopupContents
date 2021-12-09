@@ -1,0 +1,45 @@
+※ BN가 없는 팝업 기능
+
+popCon = new popupContents(해당 페이지, 버튼(팝업) 개수);
+popCon.init();
+
+_page.find(".popup_btn").bind('click', function(){
+    //팝업 버튼을 눌렀을때 명령어
+});
+
+
+CSS 설정
+.contents:nth-child(1) .popup_btn{
+    position: absolute;
+    top: 500px;
+    left: 500px;
+    width: 200px;
+    height: 100px;
+    cursor: pointer;
+    border: 1px solid red;
+}
+
+.contents:nth-child(1) .popup{
+    background: rgba(0,0,0,0.7) url(../images/11/pop_1.png) no-repeat;
+}
+
+CSS 팝업 닫기 버튼(모서리)
+.contents:nth-child(1) .popup .close{
+    top: 0px;
+    right: 0px;
+    background: url(../../../../common/images/images/close2.png) 5px -5px no-repeat;
+}
+
+CSS 팝업 닫기 버튼(지식 알기)
+.contents:nth-child(1) .popup .close{
+    top: 90px;
+    right: 40px;
+}
+
+------------------------------------------
+
+ex)
+popCon = new popupContents(_page, 1);
+popCon.init();
+
+
