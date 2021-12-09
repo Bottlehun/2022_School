@@ -1,0 +1,49 @@
+기본
+<div class="ani ani1" data-ado=""></div>
+<div class="ani ani2" data-ado=""></div>
+
+
+CSS 설정
+.contents:nth-child(1) .ani1{
+    position: absolute;
+    top: 500px;
+    left: 300px;
+    width: 300px;
+    height: 500px;
+    border: 1px solid red;
+}
+
+.contents:nth-child(1) .ani1 .item{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    height: 200px;
+    background: url(이미지경로) no-repeat;
+}
+
+.contents:nth-child(2) .ani1 .close{닫기버튼}
+
+
+※ 테두리 영역 확인용 CSS
+.contents .ani .ca{
+/*    stroke: red;*/
+}
+
+좌우 반전 CSS
+transform: scaleX(-1);
+
+
+추가기능 1 : 모두듣기 버튼
+var aniTime = [2000, 2000]; //사운드파일 길이
+
+aniCon.allSound(사운드파일 길이, 말풍선 상태); 
+말풍선 상태 = true : 말풍선 모두 보이기 / false : 말풍선 사라지고 현재만 보이기
+
+------------------------------------------
+
+ex)
+aniCon = new aniContents(_page, false); // 국어는 무조건 false
+aniCon.init();
+aniCon.allSound(aniTime, false); // 추가기능 1
+
