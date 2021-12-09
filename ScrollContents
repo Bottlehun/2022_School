@@ -1,0 +1,30 @@
+<link rel="stylesheet" type="text/css" href="../../common/css/jquery.mCustomScrollbar.css" />
+
+<script src="../../common/js/jquery.mCustomScrollbar.js"></script>
+
+scrollCon = new scrollContents(생성위치, 스크롤 위치); 
+scrollCon.init();
+
+CSS 설정
+.contents:nth-child(1) .scrollGroup {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 500px;
+    height: 500px;
+}
+
+.contents:nth-child(1) .scrollGroup .item{ 
+    position: relative;
+    width: 전체이미지 폭;
+    height: 전체이미지 높이;
+    background: url(../images/05/scroll_1.png) no-repeat;
+}
+
+------------------------------------------
+
+ex)
+scrollCon = new scrollContents(_page, "right"); 
+scrollCon.init();
+
+
