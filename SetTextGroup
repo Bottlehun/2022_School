@@ -1,0 +1,33 @@
+※ 직접쓰기
+
+JS 설정
+setTextGroup(_page, 2); 1: 1줄, 2: 2줄 이상
+
+CSS 설정
+- 가운데 정렬
+.contents:nth-child(1) .textGroup.t1 {
+    top: 490px;
+    left: 1070px;
+    width: 710px;
+    height: 205px;
+    line-height: 205px;
+    border: 1px solid red;
+}
+※ CSS설정시 height와 line-height 값을 동일하게 설정
+
+정렬 (기본 세로가운데 가로왼쪽)
+.contents:nth-child(1) .textGroup .textarea {
+    vertical-align: top; // 위쪽정렬
+    text-align: center; // 가로 가운데정렬
+}
+
+
+HTML 설정
+<div class="textGroup t1">
+    <textarea id="Textbox1" class="textarea" rows="1" cols="20" placeholder="직접 쓰기"></textarea>
+</div>
+<div class="textGroup t2">
+    <textarea id="Textbox2" class="textarea" rows="1" cols="20" placeholder="직접 쓰기"></textarea>
+</div>
+
+
