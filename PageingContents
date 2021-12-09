@@ -1,0 +1,110 @@
+<div class="pageWrap">
+    <div class="page page1"></div>
+    <div class="page page2"></div>
+    <div class="page page3"></div>
+</div>
+
+*************************************************************************
+ex) 본문
+
+CSS 설정
+.contents:nth-child(1) .page{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.contents:nth-child(1) .prev, .contents:nth-child(1) .next{
+    top: 468px;
+}
+
+.contents:nth-child(1) .page1{
+    background: url(../images/05/item_1.png) no-repeat;
+}
+
+
+JS 설정
+pageCon = new pageingContents(_page.find('.pageWrap'));
+pageCon.init();
+
+pageConEvent_1(pageCon.page.eq(0));
+pageCon.wrap.find(".prev, .next, .dot").bind('click',function(){
+    pageConEvent_1(pageCon.page.eq(pageCon.currentPage));
+});
+
+*************************************************************************
+ex) 팝업
+
+팝업버튼
+<div class="btn" data-num="0"></div>
+
+<div class="pop pop0"> //팝업 갯수에 따라서 pop0, pop1, pop2...
+    <div class="pageWrap">
+        <div class="page page1"></div>
+        <div class="page page2"></div>
+        <div class="page page3"></div>
+    </div>
+    <div class="close"></div>
+</div>
+
+pageCon = new pageingContents($('.pop0 .pageWrap'));
+pageCon.init();
+pageCon.setPopUp(_page, 0); //팝업
+
+_page.find(".btn").bind('click', function(){
+    var p = $(this).attr("data-num");
+    pageConEvent_1(pageCon.page.eq(p));
+});
+pageCon.wrap.find(".prev, .next, .dot").bind('click',function(){
+    pageConEvent_1(pageCon.page.eq(pageCon.currentPage));
+});
+
+CSS 설정
+.contents:nth-child(1) .btn{
+    position: absolute;
+    top: 500px;
+    left: 500px;
+    width: 200px;
+    height: 100px;
+    cursor: pointer;
+    border: 1px solid red;
+}
+
+.pop0 .page{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.pop0 .prev, .pop0 .next{
+    top: 468px;
+}
+
+.pop0 .page1{
+    background: url(../images/07/pop1_1.png) no-repeat;
+}
+
+팝업 닫기 버튼(모서리)
+.pop0 .close{
+    top: 0px;
+    right: 0px;
+    background: url(../../../../common/images/images/close2.png) 5px -5px no-repeat;
+}
+
+*************************************************************************
+ex) 해당 페이지별 작업 내용
+
+function pageConEvent_1(_page){ // 공통으로 실행될 함수
+    switch(_page.index()){ //page마다 기능이 다를 경우 사용
+        case 0:
+        break;
+        case 1:
+        break;
+    }
+}
+
+
