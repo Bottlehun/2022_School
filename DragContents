@@ -8,6 +8,7 @@ dragCon = new dragContents(해당 위치, 드래그앤드롭 정답, {옵션});
 
 옵션
 random: "1", //랜덤정답 "1": 정오답, "2": 정답 없는 랜덤정답, "3": 정답 있는 랜덤정답
+clones: fasle, // 드래그 버튼 클론 생성 여부
 answer: function(_val){
     if(_val){
         //정답일 경우
