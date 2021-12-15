@@ -22,8 +22,13 @@ tabCon = new tabContents(4, _page);
 tabCon.init();
 
 pageConEvent_1(tabCon.tab.eq(0));
+tabCon.wrap.find(".tab_btn[data-num='0']").addClass('on');
 tabCon.wrap.find(".tab_btn").bind('click',function(){
-    pageConEvent_1(tabCon.tab.eq(tabCon.currentTab));
+    if(!$(this).hasClass('on')){
+        tabCon.wrap.find(".tab_btn").removeClass('on');
+        pageConEvent_1(tabCon.tab.eq(tabCon.currentTab));
+    }
+    $(this).addClass('on');
 });
 
 
