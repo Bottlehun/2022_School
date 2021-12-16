@@ -15,14 +15,14 @@ answer: function(_val){
     }else{
         //오답일 경우
     }
-} //정답, 오답 콜백함수
+}, //정답, 오답 콜백함수
 clickAnsbtn: function(_val){
     if(_val){
         //정답보기를 클릭한 경우
     }else{
         //다시하기를 클릭한 경우
     }
-}; //정답버튼 클릭 콜백함수
+} //정답버튼 클릭 콜백함수
 
 CSS 설정
 .contents:nth-child(1) .dragArea{
