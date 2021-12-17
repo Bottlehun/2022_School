@@ -20,6 +20,11 @@ CSS 설정
 .quizGroup li .icon{정답 동그라미}
 
 
+※ 텍스트 정렬 1,2 / 3,4
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+
+
 // 이미지 사용시
 .contents:nth-child(1) .bogi li:nth-child(1){기본이미지}
 .contents:nth-child(1) .bogi li.on:nth-child(1){정답이미지}
