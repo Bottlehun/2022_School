@@ -66,4 +66,8 @@ clickCon.showitem(); // 추가기능 1
 clickCon.setAnsBtn(); // 추가기능 2
 clickCon.cho(choTxt); // 추가기능 3
 clickCon.zIndex(_page.find('.target'), "1"); // 추가기능 4
+clickCon.step(); // 추가기능 5,  옵션 "toggle" : 토글기능 (없으면 다시 클릭 안됨)
+
+
+
 
